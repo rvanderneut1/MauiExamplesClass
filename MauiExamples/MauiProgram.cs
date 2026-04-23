@@ -74,6 +74,9 @@ public static class MauiProgram
         builder.Services.AddTransient<Examples.Components.Camera.CameraPage>();
         builder.Services.AddTransient<Examples.Components.Camera.PhotoDetailPage>();
         builder.Services.AddTransient<Examples.Components.Maps.MapsPage>();
+        builder.Services.AddTransient<Examples.Components.NetworkStatus.NetworkStatusPage>();
+
+        builder.Services.AddTransient<Examples.Basics.BasicPage>();
 
 #if DEBUG
         builder.Logging.AddDebug();

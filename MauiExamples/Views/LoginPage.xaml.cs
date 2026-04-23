@@ -128,7 +128,7 @@ public partial class LoginPage : ContentPage
             }
             
             // Then navigate to the main page
-            await Shell.Current.GoToAsync("//MainPage");
+            await Shell.Current.GoToAsync("/MainPage");
         }
         catch (Exception ex)
         {

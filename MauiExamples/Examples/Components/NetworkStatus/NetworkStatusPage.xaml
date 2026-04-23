@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiExamples.Examples.Components.NetworkStatus.NetworkStatusPage"
+             Title="Network Status">
+
+    <ScrollView>
+        <VerticalStackLayout >
+
+            <!-- Status Banner -->
+            <Border 
+                    x:Name="StatusBanner"
+                    BackgroundColor="Green"
+                    Padding="20"
+                   >
+                <Label
+                        x:Name="StatusLabel"
+                       Text="Connected"
+                       TextColor="White"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"/>
+            </Border>
+
+            <!-- Connection Type -->
+                <FlexLayout Direction="Row" 
+                            Margin="0,0,0,20"
+                            AlignContent="Center"
+                            JustifyContent="SpaceEvenly"
+                            >
+                    <Label Text="Connection Type"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           Margin="0,0,0,5"
+           
+                           />
+                    <Label 
+                            x:Name="ConnectionType"
+                           Text="WiFi"
+                           FontSize="16"
+                        />
+                </FlexLayout>
+
+                <!-- Active Connection Profiles -->
+                <FlexLayout Direction="Column"
+                            Margin="0,0,0,20"
+                            FlexLayout.Grow="1">
+                    <Label Text="Active Connection Profiles"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           Margin="0,0,0,10"/>
+
+                    <CollectionView ItemsSource="{Binding ConnectionProfiles}"
+                                    MinimumHeightRequest="100">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+
+                            
+                                <Label Text="{Binding }"
+                                               FontSize="14"
+                                               FontAttributes="Bold"
+                                               Margin="0,0,0,3"/>
+                             
+                        </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                        <CollectionView.EmptyView>
+                            <Label Text="No active profiles"
+                                   FontSize="14"
+                                   TextColor="Gray"
+                                   Margin="0,10"/>
+                        </CollectionView.EmptyView>
+                    </CollectionView>
+                </FlexLayout>
+
+                <!-- Connectivity Events Log -->
+                <FlexLayout Direction="Column"
+                            Margin="0,0,0,20"
+                            FlexLayout.Grow="0">
+                    <Label Text="Connectivity Events Log"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           Margin="0,0,0,10"/>
+
+                    <Border BackgroundColor="WhiteSmoke"
+                            Padding="10"
+                            StrokeThickness="1"
+                            Stroke="LightGray">
+                        <ScrollView MaximumHeightRequest="300" >
+                            <FlexLayout 
+                                        Direction="Column">
+                                <Label Text="No events logged yet"
+                                       x:Name="EventLog"
+                                       FontSize="12"
+                                       TextColor="Gray"
+                                       Margin="0,20"
+                                       HorizontalTextAlignment="Center"/>
+                            </FlexLayout>
+                        </ScrollView>
+                    </Border>
+                </FlexLayout>
+
+                <!-- Refresh Button -->
+                <Button 
+                        Text="Refresh Network Status"
+                        Clicked="OnRefreshClicked"
+                        FontSize="16"
+                        Margin="0,10,0,0"
+                        FlexLayout.Grow="0"/>
+            <Button 
+         Text="GoTo basic"
+         Clicked="OnGotoBasicsClicked"
+         FontSize="16"
+         Margin="0,10,0,0"
+         FlexLayout.Grow="0"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

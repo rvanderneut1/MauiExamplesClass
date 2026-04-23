@@ -68,6 +68,12 @@
                     AutomationId="PageSubtitle" />
 
                 <Button
+                 x:Name="BasicButton"
+                 Text="Basic XAML" 
+                 Clicked="OnbasicButtonClicked"
+                 HorizontalOptions="Fill"
+                 AutomationId="basicButton" />
+                <Button
                     x:Name="StandardButton"
                     Text="Standard XAML with Code-Behind" 
                     Clicked="OnStandardButtonClicked"

@@ -42,10 +42,8 @@ public partial class LocalNotificationPage : ContentPage
                 Android = new AndroidOptions
                 {
                     ChannelId = "general_notifications",
-                    ChannelName = "General Notifications",
                     Priority = AndroidPriority.High,
-                    IconSmallName = "notification_icon",
-                    Color = Android.Graphics.Color.Blue,
+                    IconSmallName = new AndroidIcon { ResourceName = "notification_icon" },
                     AutoCancel = true,
                     Ongoing = false
                 }
@@ -86,10 +84,8 @@ public partial class LocalNotificationPage : ContentPage
                 Android = new AndroidOptions
                 {
                     ChannelId = "scheduled_notifications",
-                    ChannelName = "Scheduled Notifications",
                     Priority = AndroidPriority.High,
-                    IconSmallName = "notification_icon",
-                    Color = Android.Graphics.Color.Red,
+                    IconSmallName = new AndroidIcon { ResourceName = "notification_icon" },
                     AutoCancel = true
                 }
             };

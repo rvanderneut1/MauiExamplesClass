@@ -32,6 +32,12 @@ public partial class ComponentsPage : ContentPage
                 Name = "Maps & Location",
                 Description = "Display maps, track location, and perform geocoding",
                 PageType = typeof(Maps.MapsPage)
+            },
+            new ComponentItem
+            {
+                Name = "NetworkStatus",
+                Description = "Shows the state of the network",
+                PageType = typeof(NetworkStatus.NetworkStatusPage)
             }
             // Add more components here as they are created
         };

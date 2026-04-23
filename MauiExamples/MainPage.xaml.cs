@@ -71,6 +71,12 @@ public partial class MainPage : ContentPage
         }
     }
 
+    private async void OnbasicButtonClicked(object sender, EventArgs e)
+    {
+        var page = _serviceProvider.GetRequiredService<Examples.Basics.BasicPage>();
+        await Shell.Current.Navigation.PushAsync(page);
+    }
+
     private async void OnStandardButtonClicked(object sender, EventArgs e)
     {
         var page = _serviceProvider.GetRequiredService<Examples.Standard.ProductsPage>();

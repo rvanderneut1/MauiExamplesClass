@@ -8,8 +8,11 @@ public partial class App : Application
     private readonly AuthService _authService;
     
     public App(AuthService authService)
-    {
+    { 
+        
         InitializeComponent();
+
+
         _authService = authService;
 
         // Set startup page based on authentication status
