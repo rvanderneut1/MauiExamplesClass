@@ -13,6 +13,14 @@ namespace MauiExamples.Examples.MVU.Models
         public string SearchTerm { get; init; } = string.Empty;
 
 
+        public IReadOnlyList<SimpleProduct> FilteredProducts =>
+                string.IsNullOrWhiteSpace(SearchTerm)
+                    ? Products   // no filter active - return everything
+                    : Products
+                        .Where(p => p.Name.Contains(SearchTerm, StringComparison.OrdinalIgnoreCase))
+                        .ToList();
+
+
         public static ProductsPageModel Initial() => new ProductsPageModel
         {
             Products = [],

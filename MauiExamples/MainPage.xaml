@@ -6,17 +6,17 @@
 
     <Grid RowDefinitions="Auto,*">
         <!-- Authentication status bar -->
-        <Grid Grid.Row="0" 
-              ColumnDefinitions="Auto,*,Auto" 
+        <Grid Grid.Row="0"
+              ColumnDefinitions="Auto,*,Auto"
               BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Primary}}"
               Padding="10">
-            <Label x:Name="AuthStatusLabel" 
+            <Label x:Name="AuthStatusLabel"
                    Grid.Column="0"
-                   Text="Not logged in" 
+                   Text="Not logged in"
                    TextColor="White"
                    VerticalOptions="Center"
-                   Margin="5,0,0,0" />
-            
+                   Margin="5,0,0,0"/>
+
             <Button x:Name="LoginButton"
                     Grid.Column="2"
                     Text="Login"
@@ -27,8 +27,8 @@
                     BorderWidth="1"
                     Margin="0,0,5,0"
                     HeightRequest="40"
-                    AutomationId="HeaderLoginButton" />
-                    
+                    AutomationId="HeaderLoginButton"/>
+
             <Button x:Name="LogoutButton"
                     Grid.Column="2"
                     Text="Logout"
@@ -40,9 +40,9 @@
                     Margin="0,0,5,0"
                     HeightRequest="40"
                     IsVisible="False"
-                    AutomationId="HeaderLogoutButton" />
+                    AutomationId="HeaderLogoutButton"/>
         </Grid>
-        
+
         <!-- Main content -->
         <ScrollView Grid.Row="1">
             <VerticalStackLayout
@@ -53,53 +53,60 @@
                     HeightRequest="185"
                     Aspect="AspectFit"
                     SemanticProperties.Description="The .NET Bot"
-                    AutomationId="MainImage" />
+                    AutomationId="MainImage"/>
 
                 <Label
                     Text="MVVM Examples"
                     Style="{StaticResource Headline}"
                     SemanticProperties.HeadingLevel="Level1"
-                    AutomationId="PageTitle" />
+                    AutomationId="PageTitle"/>
 
                 <Label
                     Text="Different implementations of MVVM in .NET MAUI"
                     Style="{StaticResource SubHeadline}"
                     SemanticProperties.HeadingLevel="Level2"
-                    AutomationId="PageSubtitle" />
+                    AutomationId="PageSubtitle"/>
 
                 <Button
-                 x:Name="BasicButton"
-                 Text="Basic XAML" 
-                 Clicked="OnbasicButtonClicked"
-                 HorizontalOptions="Fill"
-                 AutomationId="basicButton" />
+                    x:Name="BasicButton"
+                    Text="Basic XAML"
+                    Clicked="OnbasicButtonClicked"
+                    HorizontalOptions="Fill"
+                    AutomationId="basicButton"/>
                 <Button
                     x:Name="StandardButton"
-                    Text="Standard XAML with Code-Behind" 
+                    Text="Standard XAML with Code-Behind"
                     Clicked="OnStandardButtonClicked"
                     HorizontalOptions="Fill"
-                    AutomationId="StandardButton" />
-                    
+                    AutomationId="StandardButton"/>
+
                 <Button
                     x:Name="VanillaMvvmButton"
-                    Text="Vanilla MVVM Implementation" 
+                    Text="Vanilla MVVM Implementation"
                     Clicked="OnVanillaMvvmButtonClicked"
                     HorizontalOptions="Fill"
-                    AutomationId="VanillaMvvmButton" />
-                    
+                    AutomationId="VanillaMvvmButton"/>
+
                 <Button
                     x:Name="MvvmToolkitButton"
-                    Text="MVVM Toolkit Implementation" 
+                    Text="MVVM Toolkit Implementation"
                     Clicked="OnMvvmToolkitButtonClicked"
                     HorizontalOptions="Fill"
-                    AutomationId="MvvmToolkitButton" />
-                    
+                    AutomationId="MvvmToolkitButton"/>
+
+                <Button
+                    x:Name="MVUToolkitButton"
+                    Text="MVU Toolkit Implementation"
+                    Clicked="OnMVUToolkitButtonClicked"
+                    HorizontalOptions="Fill"
+                    AutomationId="MVUToolkitButton"/>
+
                 <Button
                     x:Name="ComponentsButton"
-                    Text="Components" 
+                    Text="Components"
                     Clicked="OnComponentsButtonClicked"
                     HorizontalOptions="Fill"
-                    AutomationId="ComponentsButton" />
+                    AutomationId="ComponentsButton"/>
             </VerticalStackLayout>
         </ScrollView>
     </Grid>

@@ -7,5 +7,5 @@ using System.Threading.Tasks;
 namespace MauiExamples.Examples.MVU.Messages
 {
 
-    public sealed record LoadProductsMessage();
+    public sealed record LoadProductsMessage(string SearchTerm);
 }

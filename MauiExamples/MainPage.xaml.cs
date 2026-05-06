@@ -15,14 +15,14 @@ public partial class MainPage : ContentPage
         InitializeComponent();
         _serviceProvider = serviceProvider;
         _authService = authService;
-        
+
         // Subscribe to authentication changes
         _authService.AuthenticationChanged += OnAuthenticationChanged;
-        
+
         // Update the UI based on current auth state
         UpdateAuthStatusUI();
     }
-    
+
     protected override void OnAppearing()
     {
         base.OnAppearing();
@@ -34,7 +34,7 @@ public partial class MainPage : ContentPage
         // Update the UI when auth state changes
         UpdateAuthStatusUI();
     }
-    
+
     private void UpdateAuthStatusUI()
     {
         if (_authService.IsAuthenticated)
@@ -50,22 +50,22 @@ public partial class MainPage : ContentPage
             LogoutButton.IsVisible = false;
         }
     }
-    
+
     private async void OnLoginButtonClicked(object sender, EventArgs e)
     {
         var loginPage = _serviceProvider.GetRequiredService<LoginPage>();
         await Navigation.PushModalAsync(new NavigationPage(loginPage));
     }
-    
+
     private async void OnLogoutButtonClicked(object sender, EventArgs e)
     {
         bool confirm = await DisplayAlert("Logout", "Are you sure you want to log out?", "Yes", "No");
-        
+
         if (confirm)
         {
             await _authService.LogoutAsync();
             // UI will be updated via the AuthenticationChanged event
-            
+
             // Optionally show a confirmation
             await DisplayAlert("Logged Out", "You have been logged out successfully.", "OK");
         }
@@ -98,6 +98,12 @@ public partial class MainPage : ContentPage
     private async void OnComponentsButtonClicked(object sender, EventArgs e)
     {
         var page = _serviceProvider.GetRequiredService<Examples.Components.ComponentsPage>();
+        await Shell.Current.Navigation.PushAsync(page);
+    }
+
+    private async void OnMVUToolkitButtonClicked(object sender, EventArgs e)
+    {
+        var page = _serviceProvider.GetRequiredService<Examples.MVU.ProductsPages>();
         await Shell.Current.Navigation.PushAsync(page);
     }
 }
